@@ -1,0 +1,1 @@
+CUDA_VISIBLE_DEVICES=1,2 python train.py --content_dir input/content --style_dir input/style
