@@ -26,7 +26,7 @@ def gaussian_noise(img, mean=0, sigma=0.2):
     
     return gaussian_out
 
-img = cv2.imread('input/content/avril.jpg')
+img = cv2.imread(image_path)
 
 img_noisy = gaussian_noise(img)
 
