@@ -5,4 +5,3 @@ output/*
 experiments/*
 logs/*
 __pycache__/
-*.jpg
