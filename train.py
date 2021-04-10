@@ -153,8 +153,8 @@ for i in tqdm(range(args.max_iter)):
     loss_c = args.content_weight * loss_c
     loss_s = args.style_weight * loss_s
     loss_t = args.teacher_weight * loss_t
-    #loss = loss_c + loss_s + loss_t
-    loss = loss_t
+    loss = loss_c + loss_s + loss_t
+    #loss = loss_t
     optimizer.zero_grad()
     loss.backward()
     optimizer.step()
