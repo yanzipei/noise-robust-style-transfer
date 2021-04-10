@@ -11,5 +11,5 @@ https://github.com/naoto0804/pytorch-AdaIN
 
 ## Datasets for Training
 
-https://cocodataset.org/#download
-https://www.kaggle.com/c/painter-by-numbers
+MS-COCO: https://cocodataset.org/#download
+Wikiart: https://www.kaggle.com/c/painter-by-numbers
