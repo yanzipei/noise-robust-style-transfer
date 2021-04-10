@@ -8,3 +8,8 @@ The codes are fully tested on Ubuntu 18.04 and Python 3.7. The codes should be a
 ## Instruction
 You may simly follow the instruction in the original repo:
 https://github.com/naoto0804/pytorch-AdaIN
+
+## Datasets for Training
+
+https://cocodataset.org/#download
+https://www.kaggle.com/c/painter-by-numbers
