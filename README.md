@@ -1,4 +1,4 @@
-# noise-robust-style-transfer
+# Nosie Robust Style Transfer
 The code of project, Noise Robust Arbitrary Style Transfer via Knowledge Distillation, for PolyU Subject COMP6706 Advanced Topics in Visual Computing Spring 2021.
 
 ## Requirments
