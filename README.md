@@ -5,7 +5,7 @@ The code of project, Noise Robust Arbitrary Style Transfer via Knowledge Distill
 
 The codes are fully tested on Ubuntu 18.04 and Python 3.7. The codes should be able to run on other operation systems,e.g. Windows, and Python 3+ versions.
 
-Please install requirements by `pip install -r requirements.txt`
+Please install requirements by `pip install -r requirements.txt`.
 
 ## Instruction
 You may simly follow the instruction in the original repo:
