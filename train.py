@@ -56,7 +56,7 @@ def adjust_learning_rate(optimizer, iteration_count):
 
 
 class AddGaussianNoise(object):
-    def __init__(self, mean=0., std=1, device='cpu'):
+    def __init__(self, mean=0., std=0.2, device='cpu'):
         self.std = std
         self.mean = mean
         self.device = device
@@ -88,7 +88,7 @@ parser.add_argument('--style_weight', type=float, default=10.0)
 parser.add_argument('--content_weight', type=float, default=1.0)
 parser.add_argument('--teacher_weight', type=float, default=1.0)
 parser.add_argument('--n_threads', type=int, default=16)
-parser.add_argument('--save_model_interval', type=int, default=1000)
+parser.add_argument('--save_model_interval', type=int, default=100)
 args = parser.parse_args()
 
 device = torch.device('cuda')
@@ -98,6 +98,7 @@ log_dir = Path(args.log_dir)
 log_dir.mkdir(exist_ok=True, parents=True)
 writer = SummaryWriter(log_dir=str(log_dir))
 
+decoder_t = net.decoder_t
 decoder = net.decoder
 vgg = net.vgg
 
@@ -105,16 +106,21 @@ vgg.load_state_dict(torch.load(args.vgg))
 vgg = nn.Sequential(*list(vgg.children())[:31])
 
 
+decoder_t.load_state_dict(torch.load(args.decoder))
+decoder_t = nn.Sequential(*list(decoder_t.children()))
+
+
 decoder.load_state_dict(torch.load(args.decoder))
 decoder = nn.Sequential(*list(decoder.children()))
 
-teacher_network = net.Net(vgg, decoder)
+
+teacher_network = net.Net(vgg, decoder_t)
 teacher_network.eval()
 teacher_network.to(device)
 
 student_network = net.Net(vgg, decoder)
-teacher_network.train()
-teacher_network.to(device)
+student_network.train()
+student_network.to(device)
 
 content_tf = train_transform()
 style_tf = train_transform()
@@ -147,8 +153,8 @@ for i in tqdm(range(args.max_iter)):
     loss_c = args.content_weight * loss_c
     loss_s = args.style_weight * loss_s
     loss_t = args.teacher_weight * loss_t
-    loss = loss_c + loss_s + loss_t
-
+    #loss = loss_c + loss_s + loss_t
+    loss = loss_t
     optimizer.zero_grad()
     loss.backward()
     optimizer.step()

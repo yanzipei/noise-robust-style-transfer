@@ -2,13 +2,12 @@ import numpy as np
 import os
 import cv2
 
-image_path = 'input/content/avril.jpg'
+image_path = 'input/style/antimonocromatismo.jpg'
+#image_path = 'input/content/antimonocromatismo.jpg'
 
-folder, filename = os.path.split(image_path)
+output_path = image_path.replace('.jpg','_noisy.jpg')
 
-filename = filename.replace('.jpg','_noisy.jpg')
-
-def gaussian_noise(img, mean=0, sigma=0.2):
+def gaussian_noise(img, mean=0, sigma=0.3):
     
     # int -> float (標準化)
     img = img / 255
@@ -30,4 +29,4 @@ img = cv2.imread(image_path)
 
 img_noisy = gaussian_noise(img)
 
-cv2.imwrite(filename,img_noisy)
+cv2.imwrite(output_path,img_noisy)

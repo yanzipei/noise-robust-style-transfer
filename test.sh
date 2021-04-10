@@ -1,1 +1,3 @@
-CUDA_VISIBLE_DEVICES=1,2 python test.py --content input/content/avril.jpg --style input/style/picasso_self_portrait.jpg,input/style/impronte_d_artista.jpg,input/style/trial.jpg,input/style/antimonocromatismo.jpg --style_interpolation_weights 1,1,1,1 --content_size 512 --style_size 512 --crop
+CUDA_VISIBLE_DEVICES=0,1 python test.py --content input/content/chicago.jpg --style input/style/antimonocromatismo.jpg --decoder 'experiments/decoder_iter_1000.pth.tar'
+CUDA_VISIBLE_DEVICES=0,1 python test.py --content input/content/chicago.jpg --style input/style/antimonocromatismo_noisy.jpg --decoder 'experiments/decoder_iter_1000.pth.tar'
+CUDA_VISIBLE_DEVICES=0,1 python test.py --content input/content/chicago_noisy.jpg --style input/style/antimonocromatismo.jpg --decoder 'experiments/decoder_iter_1000.pth.tar'

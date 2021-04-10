@@ -1,1 +1,1 @@
-CUDA_VISIBLE_DEVICES=1,2 python train.py --content_dir train/content --style_dir train/style
+CUDA_VISIBLE_DEVICES=1,2 python train.py --content_dir data/content --style_dir data/style
