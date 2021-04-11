@@ -22,12 +22,12 @@ Wikiart: https://www.kaggle.com/c/painter-by-numbers
 
 ## Use of Tensorboard
 
-To use tensorboard, Please install the package by `pip install tensorboard`
+To use tensorboard, Please install the package by `pip install tensorboard`.
 
-The logs is saved in logs/, To run the tensorboard, enter:
+All traininig logs are saved in `logs/`, To run the tensorboard, enter the following command in the terminal:
 
 `tensorboard --logdir logs`
 
-Then, you visit it by the following URL:
+Then, you can visit it by the following URL:
 
 `http://localhost:6006/`
