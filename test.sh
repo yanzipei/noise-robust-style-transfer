@@ -1,3 +1,2 @@
-CUDA_VISIBLE_DEVICES=0,1 python test.py --content input/content/chicago.jpg --style input/style/antimonocromatismo.jpg --decoder 'experiments/decoder_iter_1000.pth.tar'
-CUDA_VISIBLE_DEVICES=0,1 python test.py --content input/content/chicago.jpg --style input/style/antimonocromatismo_noisy.jpg --decoder 'experiments/decoder_iter_1000.pth.tar'
-CUDA_VISIBLE_DEVICES=0,1 python test.py --content input/content/chicago_noisy.jpg --style input/style/antimonocromatismo.jpg --decoder 'experiments/decoder_iter_1000.pth.tar'
+CUDA_VISIBLE_DEVICES=0,1 python test.py --content_dir input/content --style_dir input/style --decoder 'experiments/decoder_iter_5000.pth.tar' --output 'output/proposed'
+CUDA_VISIBLE_DEVICES=0,1 python test.py --content_dir input/content --style_dir input/style --decoder 'models/decoder.pth' --output 'output/original'
