@@ -24,7 +24,7 @@ Wikiart: https://www.kaggle.com/c/painter-by-numbers
 
 To use tensorboard, Please install the package by `pip install tensorboard`.
 
-All traininig logs are saved in logs/, To run the tensorboard, enter the following command in the terminal:
+All traininig logs are saved in `logs/`, To run the tensorboard, enter the following command in the terminal:
 
 `tensorboard --logdir logs`
 
