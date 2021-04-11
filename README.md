@@ -19,3 +19,15 @@ Download [decoder.pth](https://drive.google.com/file/d/1bMfhMMwPeXnYSQI6cDWElSZx
 MS-COCO: https://cocodataset.org/#download
 
 Wikiart: https://www.kaggle.com/c/painter-by-numbers
+
+## Use of Tensorboard
+
+To use tensorboard, Please install the package by `pip install tensorboard`
+
+The logs is saved in logs/, To run the tensorboard, enter:
+
+`tensorboard --logdir logs`
+
+Then, you visit it by the following URL:
+
+`http://localhost:6006/`
